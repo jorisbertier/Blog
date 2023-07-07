@@ -50,4 +50,6 @@
 
 - symfony console make:registration-form
 
--Ajout add dans RegistrationController & ajout dans template/form input
+- Ajout add dans RegistrationController & ajout dans template/form input
+
+- Ajout de contraintes dans RegistrationForm
