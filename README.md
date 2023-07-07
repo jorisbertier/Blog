@@ -37,3 +37,11 @@
 - composer require symfony/security-bundle
 
 - symfony serve
+
+- symfony console make:controller Login  // modifié après secutite .yaml, login:index.html.twig
+
+- symfony console security:hash-password // insert de l'user sur le sgbd avec le password hasher
+
+- ajout dans route.yaml     app_logout:
+                                path: /logout
+                                methods: POST|GET
