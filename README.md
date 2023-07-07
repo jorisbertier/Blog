@@ -38,6 +38,8 @@
 
 - symfony serve
 
+<h1>Creation Login, Logout & registration</h1>
+
 - symfony console make:controller Login  // modifié après secutite .yaml, login:index.html.twig
 
 - symfony console security:hash-password // insert de l'user sur le sgbd avec le password hasher
@@ -45,3 +47,7 @@
 - ajout dans route.yaml     app_logout:
                                 path: /logout
                                 methods: POST|GET
+
+- symfony console make:registration-form
+
+-Ajout add dans RegistrationController & ajout dans template/form input
