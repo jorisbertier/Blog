@@ -22,9 +22,6 @@ class Article
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $postDate = null;
-
     #[ORM\ManyToOne(inversedBy: 'articles')]
     private ?User $user = null;
 
@@ -61,18 +58,6 @@ class Article
     public function setContent(string $content): static
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    public function getPostDate(): ?\DateTimeInterface
-    {
-        return $this->postDate;
-    }
-
-    public function setPostDate(\DateTimeInterface $postDate): static
-    {
-        $this->postDate = $postDate;
 
         return $this;
     }

@@ -14,9 +14,6 @@ class Review
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $postDate = null;
-
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
@@ -29,18 +26,6 @@ class Review
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getPostDate(): ?\DateTimeInterface
-    {
-        return $this->postDate;
-    }
-
-    public function setPostDate(\DateTimeInterface $postDate): static
-    {
-        $this->postDate = $postDate;
-
-        return $this;
     }
 
     public function getContent(): ?string
