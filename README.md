@@ -8,7 +8,7 @@
 
 - Version de PHP 8.1
 
--Version Symfony LTS ^5.4
+- Version Symfony LTS ^5.4
 
 <h1>Commande d'execution du projet </h1>
 
@@ -23,3 +23,17 @@
 - symfony console make:user
 
 - symfony console doctrine:database:create -- création database
+
+- symfony console make:migration
+
+- symfony console doctrine:migration:migrate
+
+- symfony make:controller HomeController // dans le fichier path: '/', name: 'app_home', methods: 'GET'
+
+- composer require annotations // pour init les paths
+
+- symfony console debug:router // verifier le path si il existe
+
+- composer require symfony/security-bundle
+
+- symfony serve
