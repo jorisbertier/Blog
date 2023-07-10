@@ -53,3 +53,5 @@
 - Ajout add dans RegistrationController & ajout dans template/form input
 
 - Ajout de contraintes dans RegistrationForm
+
+- Ajout symfony console make:crud
