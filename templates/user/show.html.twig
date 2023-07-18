@@ -35,6 +35,16 @@
                 <th>LastName</th>
                 <td>{{ user.lastName }}</td>
             </tr>
+            <tr>
+                <th>avatar</th>
+                {% if user.brochureFilename %}
+                <td><img src="{{asset('uploads/brochures/'~ user.brochureFilename) }}"></td>
+
+                dd({{user.brochureFilename}});
+                {% else %}
+                    No avatar uploaded.
+                {% endif %}
+            </tr>
         </tbody>
     </table>
 

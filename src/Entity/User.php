@@ -46,6 +46,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Review::class)]
     private Collection $reviews;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $brochureFilename = null;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -236,5 +239,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // TODO: Implement __toString() method.
         return $this->getUsername();
+    }
+
+    public function getBrochureFilename(): ?string
+    {
+        return $this->brochureFilename;
+    }
+
+    public function setBrochureFilename(?string $brochureFilename): static
+    {
+        $this->brochureFilename = $brochureFilename;
+
+        return $this;
     }
 }
