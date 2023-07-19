@@ -20,7 +20,9 @@
                 <td>{{ review.content }}</td>
                 <td>
                     <a href="{{ path('app_review_show', {'id': review.id}) }}">show</a>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('app_review_edit', {'id': review.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -30,6 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+    {% if is_granted('ROLE_ADMIN') %}
     <a href="{{ path('app_review_new') }}">Create new</a>
+    {% endif %}
 {% endblock %}

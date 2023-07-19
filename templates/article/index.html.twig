@@ -16,6 +16,7 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>actions</th>
+
             </tr>
         </thead>
         <tbody>
@@ -25,8 +26,10 @@
                 <td>{{ article.title }}</td>
                 <td>{{ article.content }}</td>
                 <td>
-                    <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                  <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
+                {% if is_granted('ROLE_ADMIN') %}
+                  <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -43,7 +46,7 @@
   <div class="container h-100 py-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-10">
-
+</section>
 
 
       
@@ -71,7 +74,9 @@
               <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                     
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a><br>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                    {% endif %}
                 
               </div>
               <div class="col-md-1 col-lg-1 col-xl-1 text-end">
@@ -89,6 +94,7 @@
                 <td colspan="4">no records found</td>
             </tr>
         {% endfor %}
-
+    {% if is_granted('ROLE_ADMIN') %}
     <a href="{{ path('app_article_new') }}">Create new</a>
+    {% endif %}
 {% endblock %}
